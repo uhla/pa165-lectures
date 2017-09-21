@@ -14,37 +14,9 @@
     {Contents}%
     }
 
-\usetheme[subsection=false]{Dresden}
 
-
-\definecolor{SWIOrangeDark}{RGB}{249, 157, 28} % SWI logo orange color
-\definecolor{SWIGray}{RGB}{68, 68, 68} % SWI logo gray color
-\definecolor{SWIOrangeLight}{RGB}{251, 188, 102} % lighter orange
-
-\setbeamercolor{palette primary}{bg=SWIOrangeDark,fg=SWIGray}
-\setbeamercolor{palette secondary}{bg=SWIOrangeDark,fg=SWIGray}
-\setbeamercolor{palette tertiary}{bg=SWIOrangeDark,fg=SWIGray}
-\setbeamercolor{palette quaternary}{bg=SWIOrangeDark,fg=SWIGray}
-\setbeamercolor{structure}{fg=SWIOrangeDark} % itemize, enumerate, etc
-\setbeamercolor{section in toc}{fg=SWIOrangeDark} % TOC sections
-
-% Override palette coloring with secondary
-\setbeamercolor{subsection in head/foot}{bg=SWIOrangeLight,fg=white}
-
-\setbeamertemplate{footline}
-{
-  \leavevmode%
-  \hbox{%
-    \begin{beamercolorbox}[wd=.8\paperwidth,ht=2.25ex,dp=1ex,left]{bg=black,fg=title in head/foot}%
-\hspace*{3ex}    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{bg=black,fg=title in head/foot}%
-\includegraphics[height=0.5cm]{../shared_logo/SW_Logo_md.png} \hspace*{1ex}%
-  \end{beamercolorbox}%
-
-  }
-  \vskip0pt%
-}%
+%apply styling
+\input{../shared/SWIstyling}
 
 \AtBeginSection[]
 {
@@ -59,7 +31,6 @@
 \makeatother
 \makeatletter
 
-\setbeamertemplate{navigation symbols}{}
 
 \title{Tooling for Java EE applications}
 \subtitle{PA165}
