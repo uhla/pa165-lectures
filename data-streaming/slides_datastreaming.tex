@@ -1,0 +1,134 @@
+\documentclass[pdf,compress]{beamer}
+\mode<presentation>{}
+\usepackage{lmodern}
+\usepackage[normalem]{ulem}
+\usepackage[final]{pdfpages}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{moreverb}
+
+\addto\captionsczech{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Contents}%
+    }
+
+\usetheme[subsection=false]{Dresden}
+
+
+\definecolor{SWIOrangeDark}{RGB}{249, 157, 28} % SWI logo orange color
+\definecolor{SWIGray}{RGB}{68, 68, 68} % SWI logo gray color
+\definecolor{SWIOrangeLight}{RGB}{251, 188, 102} % lighter orange
+
+\setbeamercolor{palette primary}{bg=SWIOrangeDark,fg=SWIGray}
+\setbeamercolor{palette secondary}{bg=SWIOrangeDark,fg=SWIGray}
+\setbeamercolor{palette tertiary}{bg=SWIOrangeDark,fg=SWIGray}
+\setbeamercolor{palette quaternary}{bg=SWIOrangeDark,fg=SWIGray}
+\setbeamercolor{structure}{fg=SWIOrangeDark} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=SWIOrangeDark} % TOC sections
+
+% Override palette coloring with secondary
+\setbeamercolor{subsection in head/foot}{bg=SWIOrangeLight,fg=white}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.8\paperwidth,ht=2.25ex,dp=1ex,left]{bg=black,fg=title in head/foot}%
+\hspace*{3ex}    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{bg=black,fg=title in head/foot}%
+\includegraphics[height=0.5cm]{SW_Logo_md.png} \hspace*{1ex}%
+  \end{beamercolorbox}%
+
+  }
+  \vskip0pt%
+}%
+
+\AtBeginSection[]
+{
+\setbeamercolor{section in toc}{fg=SWIOrangeDark}
+\setbeamercolor{section in toc shaded}{fg=structure}
+\begin{frame}<beamer>
+  \frametitle{Contents}
+  \tableofcontents[currentsection]
+\end{frame}
+}
+
+\makeatother
+\makeatletter
+
+\setbeamertemplate{navigation symbols}{}
+
+\title{Tooling for Java EE applications}
+\subtitle{PA165}
+\date{26.\,9.\,2017}
+\author{Jiří Uhlíř, Martin Kotala}
+%\institute{Fakulta informatiky, Masarykova univerzita}
+
+\begin{document}
+\frame{\titlepage}
+
+\section[]{}
+\begin{frame}
+\frametitle{Contents}
+\tableofcontents
+\end{frame}
+
+
+\section[Maven]{Maven}
+\subsection[]{History}
+\begin{frame}
+\frametitle{History}
+\begin{itemize}
+\item Usnadnění tvorby příkladů pro použití v testech a domácích úkolech
+\item Generování sad otázek pro odpovědníky
+\end{itemize}
+\end{frame}
+
+\subsection[]{Comparison with other tools}
+\begin{frame}
+\frametitle{Comparison with other tools}
+\begin{itemize}
+\item Jednotná aplikace pro generování příkladů
+\item Opravy chyb a vylepšení algoritmů existujících generátorů \pause
+\item Generátor příkladů pro algoritmus C-Y-K \pause
+\item Rozšiřitelnost vzniklé aplikace pro další typy příkladů (i mimo okruh formálních jazyků) \pause
+\item Odlehčení GUI \pause
+\item Lokalizace do češtiny a angličtiny
+\end{itemize}
+
+\end{frame}
+
+\section[GIT Basics]{GIT Basics}
+\subsection[]{Another sub}
+\begin{frame}
+\frametitle{Cíle práce}
+\begin{itemize}
+\item Jednotná aplikace pro generování příkladů
+\item Opravy chyb a vylepšení algoritmů existujících generátorů \pause
+\item Generátor příkladů pro algoritmus C-Y-K \pause
+\item Rozšiřitelnost vzniklé aplikace pro další typy příkladů (i mimo okruh formálních jazyků) \pause
+\item Odlehčení GUI \pause
+\item Lokalizace do češtiny a angličtiny
+\end{itemize}
+
+\end{frame}
+
+\section[Another]{Another}
+\subsection[]{Another sub}
+\begin{frame}
+\frametitle{Cíle práce}
+\begin{itemize}
+\item Jednotná aplikace pro generování příkladů
+\item Opravy chyb a vylepšení algoritmů existujících generátorů \pause
+\item Generátor příkladů pro algoritmus C-Y-K \pause
+\item Rozšiřitelnost vzniklé aplikace pro další typy příkladů (i mimo okruh formálních jazyků) \pause
+\item Odlehčení GUI \pause
+\item Lokalizace do češtiny a angličtiny
+\end{itemize}
+
+\end{frame}
+
+\end{document}
