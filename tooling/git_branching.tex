@@ -244,16 +244,15 @@ Note:
 	\begin{itemize}
 	\item Merge the specified branch into current one and let Git to choose an algorithm.
 	\end{itemize}
-\textbf{git merge --no-ff <existing-branch-name>}
+\textbf{git merge -{}-no-ff <existing-branch-name>}
 	\begin{itemize}
 	\item Merge the specified branch into current one and generate merge commit.
 	\end{itemize}
-\textbf{git merge --ff-only <existing-branch-name>}
+\textbf{git merge -{}-ff-only <existing-branch-name>}
 	\begin{itemize}
 	\item Merge the specified branch into current one and refuse to merge when fast-forward is not possible.
 	\end{itemize}
-\textbf{git checkout task} 
-% TODO verify there is new line
+\textbf{git checkout task} \\
 \textbf{git rebase master}
 	\begin{itemize}
 	\item Move the entire task branch to begin on the tip of the master branch, effectively incorporating all of the new commits in master.
