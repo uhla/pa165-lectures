@@ -58,7 +58,6 @@
 		\item No need to have access to central repository all the time
 		\item Changes are commited locally and then pushed to central repository
 		\end{itemize}%TODO anything else?
-
 \end{itemize}
 \end{frame}
 
@@ -79,5 +78,96 @@
 		\item Scalable
 		\item Fetching version history from locally stored repository is faster then from remote
 		\end{itemize}%TODO anything else?
+	\item Allows various workflows
+		\begin{itemize}
+		\item Centralized (enterprise companies)
+		\item Hierarchical (Linux kernel)
+		\item Distributed (open source projects, pull requests)
+		\end{itemize}%TODO anything else?
 \end{itemize}
 \end{frame}
+
+% Ok, that was enough for theory
+\subsection[]{Git locally}
+\begin{frame}
+\frametitle{Git Basics - commands}
+
+\textbf{git init}
+	\begin{itemize}
+	\item Initializes empty local repository
+	\end{itemize}
+\textbf{git status}
+	\begin{itemize}
+	\item Shows current file differences between HEAD commit and current working copy
+	\end{itemize}
+\textbf{git add <filename>}
+	\begin{itemize}
+	\item Adds a file/directory into commit checklist
+	\item -A (all files not versioned, or not ignored), -u (only updated files already under version control)
+	\end{itemize}
+\textbf{git commit -m <message>}
+	\begin{itemize}
+	\item Records working copy changes into repository
+	\end{itemize}
+\textbf{.gitignore}
+	\begin{itemize}
+	\item File for specifying files not to be tracked under version control (binary files, log files, temporary build files, etc.)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Git Basics - commands}
+
+\textbf{git log}
+	\begin{itemize}
+	\item Shows latest commits for local repository
+	\item --oneline (condensed view), --graph (includes branches)
+	\end{itemize}
+\textbf{git diff}
+	\begin{itemize}
+	\item Shows code difference between HEAD commit and current working copy
+	\end{itemize}
+\textbf{git checkout / git reset}
+	\begin{itemize}
+	\item Removes local uncommited changes
+	\end{itemize}
+\textbf{git reset --soft HEAD~1 / --hard <commithash>}
+	\begin{itemize}
+	\item Reverts working copy to given commit (soft keeps changes as \emph{to be commited}, hard removes them completely)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Git Basics - commands}
+\textbf{git tag}
+	\begin{itemize}
+	\item Annotates current version of local repository with tag (such as version)
+	\end{itemize}
+\textbf{git clone}
+	\begin{itemize}
+	\item Clones remote repository into local repository and fetches latest changes
+	\end{itemize}
+\textbf{git push}
+	\begin{itemize}
+	\item Pushes local commited changes into remote repository
+	\item --tags Pushes tags into remote repository
+	\end{itemize}
+\end{frame}
+
+
+
+
+\subsection[]{Git Basics - Demo}
+\begin{frame}
+\frametitle{Git Basics - Demo}
+\end{frame}
+
+
+
+% TODO tags
+
+
+
+
+
+
