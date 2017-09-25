@@ -1,0 +1,83 @@
+\section[Git Basics]{Git Basics}
+\subsection[]{Version control}
+\begin{frame}
+\frametitle{Version control}
+\begin{itemize}
+	\item Motivation
+	\item History
+		\begin{itemize}
+		\item One file at a time
+		\item Centralized (CVS, Subversion)
+		\item Distributed (Git, Mercurial)
+		\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection[]{Git history}
+\begin{frame}
+\frametitle{Git history}
+\begin{itemize}
+	\item Created in 2005 by Linus Torvalds 
+		\begin{itemize}
+		\item described by himself as "stupid content tracker"
+		\item Originally created for linux kernel development
+		\end{itemize}
+	\item Inspired by BitKeeper, aiming to be performant and free
+	\item CVS taken as example of what \textit{not to do}
+	\item git - no exact meaning
+		\begin{itemize}
+		\item random three-letter combination that is pronounceable, and not actually used by any common UNIX command. The fact that it is a mispronunciation of "get" may or may not be relevant.
+		\item "global information tracker": you're in a good mood, and it actually works for you. Angels sing, and a light suddenly fills the room.
+		\item "g*dd*mn idiotic truckload of sh*t": when it breaks
+		\item \url{https://github.com/git/git/blob/master/README.md} 
+		\end{itemize}	
+\end{itemize}
+\end{frame}
+
+
+
+\subsection[]{Git characteristicsl}
+\begin{frame}
+\frametitle{Git characteristics}
+\begin{itemize}
+	\item Strong support for non-linear development
+	%Git supports rapid branching and merging, and includes specific tools for visualizing and navigating a non-linear development history. In Git, a core assumption is that a change will be merged more often than it is written, as it is passed around to various reviewers. In Git, branches are very lightweight: a branch is only a reference to one commit. With its parental commits, the full branch structure can be constructed.
+		\begin{itemize}
+		\item Rapid branching and merging
+		\item Tools for visualisation and navigation in development history
+		\item Lightweight branches % branch = reference to only one commit
+		\end{itemize}
+	\item Distributed development
+	%Like Darcs, BitKeeper, Mercurial, SVK, Bazaar, and Monotone, Git gives each developer a local copy of the full development history, and changes are copied from one such repository to another. These changes are imported as added development branches, and can be merged in the same way as a locally developed branch.
+		\begin{itemize}
+		\item Each developer has full history
+			\begin{itemize}
+			\item Prevents data loss
+			\item Subteams can share reposities without access to central repository
+			\end{itemize}
+		\item No need to have access to central repository all the time
+		\item Changes are commited locally and then pushed to central repository
+		\end{itemize}%TODO anything else?
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Git characteristics}
+\begin{itemize}
+	\item Variety of protocols supported
+	%Repositories can be published via Hypertext Transfer Protocol (HTTP), File Transfer Protocol (FTP), rsync (removed in Git 2.8.0[31]), or a Git protocol over either a plain socket, or Secure Shell (ssh). Git also has a CVS server emulation, which enables the use of extant CVS clients and IDE plugins to access Git repositories. Subversion and svk repositories can be used directly  with git-svn.
+		\begin{itemize}
+		\item HTTP/HTTPS
+		\item FTP
+		\item SSH %using passkey without need to provide username/pass
+		\end{itemize}
+	\item Efficient handling of large projects
+	%Torvalds has described Git as being very fast and scalable,[32] and performance tests done by Mozilla[33] showed it was an order of magnitude faster than some version control systems, and fetching version history from a locally stored repository can be one hundred times faster than fetching it from the remote server.[34]
+		\begin{itemize}
+		\item Fast (when applying patches)
+		\item Scalable
+		\item Fetching version history from locally stored repository is faster then from remote
+		\end{itemize}%TODO anything else?
+\end{itemize}
+\end{frame}
