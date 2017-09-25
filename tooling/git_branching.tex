@@ -252,43 +252,10 @@ Note:
 	\begin{itemize}
 	\item Merge the specified branch into current one and refuse to merge when fast-forward is not possible.
 	\end{itemize}
-\textbf{git checkout task}
+\textbf{git checkout task} 
+% TODO verify there is new line
 \textbf{git rebase master}
 	\begin{itemize}
 	\item Move the entire task branch to begin on the tip of the master branch, effectively incorporating all of the new commits in master.
 	\end{itemize}
 \end{frame}
-
-\section[Pull requests]{Pull requests}
-\subsection[]{Pull Requests - overview}
-\begin{frame}
-\frametitle{Pull Requests - overview}
-\begin{itemize}
-	\item Mechanism for a developer to \textbf{notify coworkers.}
-	\item \textbf{Not a Git feature}, functionality provided by e.g. Bitbucket or GitHub.
-	\item Interface for \textbf{discussing proposed changes} before integrating them into the official project code base.
-	\item \textbf{4 pieces} of information:
-		\begin{itemize} 
-		\item source repository
-		\item source branch
-		\item destination repository
-		\item destination branch
-		\end{itemize}
-\end{itemize}
-\end{frame}
-
-\subsection[]{Pull Requests - workflow}
-\begin{frame}
-\frametitle{Pull Requests - workflow}
-\begin{enumerate}
-	\item \textbf{Developer creates task/feature branch} to deliver the code.
-	\item Once done the \textbf{developer pushes his dedicated local branch} to public repository.
-	\item \textbf{Pull requests is created} (it’s good idea to rebase first).
-	\item Coworkers \textbf{review the code} and provide feedback.
-	\item Once approved the project maintainer \textbf{merges the changes.}
-\end{enumerate}
-\end{frame}
-
-
- 
-
