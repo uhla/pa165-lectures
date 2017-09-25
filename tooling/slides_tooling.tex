@@ -6,7 +6,7 @@
 \usepackage[czech]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8x]{inputenc}
-\usepackage{hyperref} % urls support, usage: \hyperref[label_name]{''link text''}
+\usepackage{hyperref} % urls support, usage: url{url}
 \usepackage{tikz} % for images positioning
 \usetikzlibrary{backgrounds}
 
@@ -50,12 +50,15 @@
 \tableofcontents[hideallsubsections]
 \end{frame}
 
+% todo use proportional for commands?
+
 \include{maven_basics}
 \include{git_basics}
 \include{git_branching}
 \include{pull_requests}
 \include{branching_strategies}
 \include{continuous_integration}
+\include{references}
 
 \section*{}
 \begin{frame}
