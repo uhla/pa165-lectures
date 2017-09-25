@@ -94,7 +94,7 @@ Note:
 \end{itemize}
 \end{frame}
 
-\subsection[]{Local Branches - 3-way merge}
+\subsection[]{Git Branching - 3-way merge}
 \begin{frame}
 \frametitle{Git Branching - 3-way merge}
 \begin{tikzpicture}
@@ -104,7 +104,191 @@ Note:
   	\node (img2) at (img1.south east) [yshift=-1cm] {\includegraphics[width=7.7cm, height=4cm]{3waymerge-2.png}};
   \end{scope}
 \end{tikzpicture}
-
-
 \end{frame}
+
+\subsection[]{Git Branching - fast-forward merge}
+\begin{frame}
+\frametitle{Git Branching - fast-forward merge}
+\begin{tikzpicture}
+  \node (ffwd1) {\includegraphics[width=8.18cm, height=3cm]{fastfwd-1.png}};
+%  \pause
+  \begin{scope}[on background layer]
+  	\node (ffwd2) at (ffwd1.south east) [yshift=-1.5cm, xshift=-2cm] {\includegraphics[width=7.9cm, height=3cm]{fastfwd-2.png}};
+  \end{scope}
+\end{tikzpicture}
+\end{frame}
+
+\subsection[]{Git Branching - rebase}
+\begin{frame}
+\frametitle{Git Branching - rebase}
+\begin{itemize}
+	\item Process of \textbf{moving or combining} a sequence of commits to a new base commit – alternative to merge.
+	\item Makes the branch appear as if you'd created it from a different commit.
+	\item Git takes changes from your branch and \textbf{replays them} on top of the destination branch.
+	\item Result branch \textbf{looks the same} but it's composed of entirely new commits.
+	\item Do not rebase commits that exist \textbf{outside your repository} (unless you have a good reason to do so).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Git Branching - rebase}
+\includegraphics[width=\textwidth, height=0.55\textwidth]{rebase.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Git Branching - rebase}
+\begin{itemize}
+	\item Rebase helps to maintain a \textbf{linear project history} – that allows an easier investigation of regression issues.
+	\item \textbf{Workflow example:}
+		\begin{enumerate}
+		\item User creates the new task branch from master and starts working in it.
+		\item There is an active development on a master branch.
+		\item User wants to get the latest updates from master to task branch.
+		\item User performs regular rebase operation to move his commits on top of latest master commits.
+		\item User is done with his task and performs the final rebase and merge to master.
+		\item Git is able to apply fast-forward algorithm for the merge.
+		\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Git Branching - rebase}
+\begin{itemize}
+	\item \textbf{Interactive rebase}
+		\begin{itemize}
+		\item Allows user to \textbf{alter individual commits} in the process of rebasing.
+		\item Support for powerful \textbf{history rewriting} features.
+		\item Useful for history cleanup: reword, edit, squash, fixup
+		\item Always amend commits that have \textbf{not been pushed} yet to avoid confusion.
+		\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection[]{Git Branching - conflicts}
+\begin{frame}
+\frametitle{Git Branching - conflicts}
+\begin{itemize}
+	\item Conflicts may occur during merge and rebase operations.
+	\item Use the suitable \textbf{merge strategy} to avoid conflicts.
+	\item When the conflict occurs:
+		\begin{itemize}
+		\item \textbf{Abort} the merge with.
+		\item \textbf{Work through} the conflict and \textbf{continue}.
+		\end{itemize}
+	\item \textbf{Visualize and resolve} conflict in merge tool.
+\end{itemize}
+Note:
+\begin{itemize}
+	\item Rebase has an option to \textbf{skip/bypass} conflicting commit.
+\end{itemize}
+\end{frame}
+
+\subsection[]{Git Branching - commands}
+\begin{frame}
+\frametitle{Git Branching - commands}
+\textbf{git branch}
+	\begin{itemize}
+	\item List all of the branches in your repository.
+	\end{itemize}
+\textbf{git branch <new-branch-name>}
+	\begin{itemize}
+	\item Create a new branch called <new-branch-name>.
+	\end{itemize}
+\textbf{git branch -d <existing-branch-name>}
+	\begin{itemize}
+	\item Delete the existing branch, safely. Use –D to force it.
+	\end{itemize}
+\textbf{git checkout <existing-branch-name>}
+	\begin{itemize}
+	\item Navigate between the existing branches.
+	\end{itemize}
+\textbf{git checkout -b <new-branch-name> <remote>/<branch-name>}
+	\begin{itemize}
+	\item Create and checkout a new local tracking branch.
+	\item Or simply use the previous command if there is only one remote tracking branch called <branch-name>. This applies to Git 1.6.6+. 
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Git Branching - commands}
+\textbf{git remote}
+	\begin{itemize}
+	\item List the connections to remote repositories. Use -v to get URLs. 
+	\end{itemize}
+\textbf{git remote add <remote-name> <url>}
+	\begin{itemize}
+	\item Add a new connection to a remote repository.
+	\end{itemize}
+\textbf{git remote rm <remote-name>}
+	\begin{itemize}
+ 	\item Remove the connection to a remote repository.
+	\end{itemize}
+\textbf{git fetch <remote-name>}
+	\begin{itemize}
+	\item Fetch all of the branches from the remote repository.
+	\end{itemize}
+\textbf{git pull <remote-name>}
+	\begin{itemize}
+	\item Fetch the remote’s copy of the current branch and merge it into the local copy.
+	\end{itemize}
+\textbf{git push <remote-name> <branch-name>}
+	\begin{itemize}
+	\item Push the specified branch to remote repository
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Git Branching - commands}
+\textbf{git merge <existing-branch-name>}
+	\begin{itemize}
+	\item Merge the specified branch into current one and let Git to choose an algorithm.
+	\end{itemize}
+\textbf{git merge --no-ff <existing-branch-name>}
+	\begin{itemize}
+	\item Merge the specified branch into current one and generate merge commit.
+	\end{itemize}
+\textbf{git merge --ff-only <existing-branch-name>}
+	\begin{itemize}
+	\item Merge the specified branch into current one and refuse to merge when fast-forward is not possible.
+	\end{itemize}
+\textbf{git checkout task}
+\textbf{git rebase master}
+	\begin{itemize}
+	\item Move the entire task branch to begin on the tip of the master branch, effectively incorporating all of the new commits in master.
+	\end{itemize}
+\end{frame}
+
+\section[Pull requests]{Pull requests}
+\subsection[]{Pull Requests - overview}
+\begin{frame}
+\frametitle{Pull Requests - overview}
+\begin{itemize}
+	\item Mechanism for a developer to \textbf{notify coworkers.}
+	\item \textbf{Not a Git feature}, functionality provided by e.g. Bitbucket or GitHub.
+	\item Interface for \textbf{discussing proposed changes} before integrating them into the official project code base.
+	\item \textbf{4 pieces} of information:
+		\begin{itemize} 
+		\item source repository
+		\item source branch
+		\item destination repository
+		\item destination branch
+		\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection[]{Pull Requests - workflow}
+\begin{frame}
+\frametitle{Pull Requests - workflow}
+\begin{enumerate}
+	\item \textbf{Developer creates task/feature branch} to deliver the code.
+	\item Once done the \textbf{developer pushes his dedicated local branch} to public repository.
+	\item \textbf{Pull requests is created} (it’s good idea to rebase first).
+	\item Coworkers \textbf{review the code} and provide feedback.
+	\item Once approved the project maintainer \textbf{merges the changes.}
+\end{enumerate}
+\end{frame}
+
+
+ 
 
